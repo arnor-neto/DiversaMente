@@ -1,16 +1,21 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const Context = createContext();
 
-export const GlobalContext = ({children}) => {
-    
-    const [nickname, setNickname] = useState("");
+const InitialState = {
+  nickname: sessionStorage.getItem("nickname"),
+};
 
-    const store = {
-        nickname : {get: nickname, set: setNickname}
-    };
+export const GlobalContext = ({ children }) => {
+  const [nickname, setNickname] = useState(InitialState.nickname);
 
-    return (
-        <Context.Provider value={store}>{children}</Context.Provider>
-    )
-}
+  const store = {
+    nickname: { get: nickname, set: setNickname },
+  };
+
+  useEffect(() => {
+    sessionStorage.setItem("nickname", nickname);
+  }, [nickname]);
+
+  return <Context.Provider value={store}>{children}</Context.Provider>;
+};
