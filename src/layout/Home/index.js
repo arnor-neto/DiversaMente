@@ -8,16 +8,24 @@ const Home = () => {
   const context = useContext(Context);
 
   const toLevel = () => {
-    history.push("/level")
-  }
+    history.push("/level");
+  };
+
+  const toAbout = () => {
+    history.push("/about");
+  };
+
+  const toGallery = () => {
+    history.push("/gallery");
+  };
 
   return (
     <S.Wrapper>
       <h1>Olá, {context.nickname.get}</h1>
       <button onClick={toLevel}>Jogar</button>
-      <button>Glossário</button>
+      <button onClick={toGallery}>Glossário</button>
       <button>Notícias</button>
-      <a href="https://google.com">Sobre a ideia</a>
+      <p onClick={toAbout}>Sobre a ideia</p>
     </S.Wrapper>
   );
 };
