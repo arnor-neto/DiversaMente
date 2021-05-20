@@ -25,7 +25,13 @@ export const LevelInfo = styled.div`
 `;
 export const Title = styled.p`
   margin: 0;
+  margin-bottom: 6px;
   font-size: 1.3rem;
+`;
+
+export const P = styled.p`
+  margin: 0;
+  margin-bottom: 1.3em;
 `;
 
 export const Content = styled.div`

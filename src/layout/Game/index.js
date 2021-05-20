@@ -27,14 +27,21 @@ const Game = () => {
     },
   ]);
   const [deck, setDeck] = useState([]);
+  const [deckSize, setDeckSize] = useState(12);
   const [selectedCards, setSelectedCards] = useState([]);
   const [cardFlippers, setCardFlippers] = useState([]);
   const [cardFaders, setCardFaders] = useState([]);
   const [lock, setLock] = useState(false);
+
+  //help modal controllers
   const [helpModal, setHelpModal] = useState(false);
   const toggleHelp = () => {
     setHelpModal(!helpModal);
   };
+
+  //card modal controllers
+  const [displayCardID, setDisplayCardID] = useState();
+  const [cardModal, setCardModal] = useState(false);
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -43,6 +50,7 @@ const Game = () => {
     }
   }
 
+  //mounts deck when card set changes
   useEffect(() => {
     var mountedDeck = cards;
     cards.forEach((card) => {
@@ -54,12 +62,7 @@ const Game = () => {
     setDeck(mountedDeck);
   }, [cards]);
 
-  const handleSelection = (value, flipper, fader) => {
-    setSelectedCards([...selectedCards, value]);
-    setCardFlippers([...cardFlippers, flipper]);
-    setCardFaders([...cardFaders, fader]);
-  };
-
+  //controls game flow
   useEffect(() => {
     if (selectedCards.length === 2) {
       setLock(true);
@@ -73,6 +76,9 @@ const Game = () => {
         setSelectedCards([]);
         setCardFlippers([]);
         setCardFaders([]);
+        setDeckSize(deckSize - 2);
+        setDisplayCardID(selectedCards[1]);
+        setCardModal(true);
         setLock(false);
       } else {
         cardFlippers.forEach((setFlip) => {
@@ -86,7 +92,21 @@ const Game = () => {
         setCardFaders([]);
       }
     }
-  }, [selectedCards, cardFlippers, cardFaders]);
+  }, [selectedCards, cardFlippers, cardFaders, deckSize]);
+
+  //triggers game end
+  useEffect(() => {
+    if (deckSize === 0 && cardModal === false) {
+      console.log("O jogo foi concluído");
+    }
+  }, [deckSize, cardModal]);
+
+  //card click handler
+  const handleSelection = (value, flipper, fader) => {
+    setSelectedCards([...selectedCards, value]);
+    setCardFlippers([...cardFlippers, flipper]);
+    setCardFaders([...cardFaders, fader]);
+  };
 
   return (
     <S.Wrapper>
@@ -112,33 +132,34 @@ const Game = () => {
       </S.Content>
       {helpModal && (
         <Modal controller={helpModal}>
-          <S.Header>
-            <ReturnButton action={toggleHelp}></ReturnButton>
-            <S.Title style={{ paddingRight: "28%" }}>Como jogar</S.Title>
-          </S.Header>
-          <div style={{ padding: "5%" }}>
-            <p>
-              Com um toque suave na tela selecione a carta que você quer
-              desvirar.
-            </p>
-            <p>
-              Em seguida tente encontrar nas outras cartas desviradas a mesma
-              imagem da carta que já está aberta.
-            </p>
-            <p>
-              Ao encontrar o par idêntico você receberá uma informação sobre o
-              gênero no qual a bandeira da sua carta pertence.
-            </p>
-            <p>
-              O jogo termina quando você consegue encontrar todos os pares e
-              receber todas as informações referentes ao nível jogado.
-            </p>
-            <p>
-              Não esqueça de avançar para o próximo nível e receber mais
-              conhecimento!
-            </p>
-            <button onClick={toggleHelp}>Entendi</button>
-          </div>
+          <S.Title style={{ height: "6vh" }}>Como jogar</S.Title>
+          <S.P>
+            Com um toque suave na tela selecione a carta que você quer desvirar.
+          </S.P>
+          <S.P>
+            Em seguida tente encontrar nas outras cartas desviradas a mesma
+            imagem da carta que já está aberta.
+          </S.P>
+          <S.P>
+            Ao encontrar o par idêntico você receberá uma informação sobre o
+            gênero no qual a bandeira da sua carta pertence.
+          </S.P>
+          <S.P>
+            O jogo termina quando você consegue encontrar todos os pares e
+            receber todas as informações referentes ao nível jogado.
+          </S.P>
+          <S.P>
+            Não esqueça de avançar para o próximo nível e receber mais
+            conhecimento!
+          </S.P>
+          <button onClick={toggleHelp}>Entendi</button>
+        </Modal>
+      )}
+      {cardModal && (
+        <Modal controller={cardModal}>
+          <S.Title style={{ height: "6vh" }}>{displayCardID}</S.Title>
+          <S.P>Você selecionou o card: {displayCardID}, parabéns!</S.P>
+          <button onClick={() => setCardModal(false)}>Entendi</button>
         </Modal>
       )}
     </S.Wrapper>
