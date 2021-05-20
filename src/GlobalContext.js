@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from "react";
 export const Context = createContext();
 
 const InitialState = {
-  nickname: sessionStorage.getItem("nickname"),
+  nickname: localStorage.getItem("nickname"),
 };
 
 export const GlobalContext = ({ children }) => {
@@ -14,7 +14,7 @@ export const GlobalContext = ({ children }) => {
   };
 
   useEffect(() => {
-    sessionStorage.setItem("nickname", nickname);
+    localStorage.setItem("nickname", nickname);
   }, [nickname]);
 
   return <Context.Provider value={store}>{children}</Context.Provider>;
