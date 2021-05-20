@@ -1,7 +1,7 @@
 import * as S from "./styled";
 import { useSpring } from "react-spring";
 
-const Modal = ({ children, controller }) => {
+const Modal = ({ children, controller}) => {
   const fadeSpring = useSpring({
     from: {
       opacity: `${controller ? 0 : 1}`,
