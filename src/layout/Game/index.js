@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import ReturnButton from "../../components/ReturnButton";
 import GameActions from "../../components/GameActions";
 import Modal from "../../components/Modal";
+import Button from "../../components/Button";
+
 
 const Game = () => {
   const [cards, setCards] = useState([
@@ -152,14 +154,14 @@ const Game = () => {
             Não esqueça de avançar para o próximo nível e receber mais
             conhecimento!
           </S.P>
-          <button onClick={toggleHelp}>Entendi</button>
+          <Button onClick={toggleHelp}>Entendi</Button>
         </Modal>
       )}
       {cardModal && (
         <Modal controller={cardModal}>
           <S.Title style={{ height: "6vh" }}>{displayCardID}</S.Title>
           <S.P>Você selecionou o card: {displayCardID}, parabéns!</S.P>
-          <button onClick={() => setCardModal(false)}>Entendi</button>
+          <Button onClick={() => setCardModal(false)}>Entendi</Button>
         </Modal>
       )}
     </S.Wrapper>

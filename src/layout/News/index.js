@@ -25,7 +25,7 @@ const News = () => {
       <S.Header>
         <ReturnButton />
         <S.Title>Notícias</S.Title>
-        <div style={{ width: "11%" }} />
+        <div style={{ width: "15%" }} />
       </S.Header>
       <S.Content>
         {articles.map((article, index) => {

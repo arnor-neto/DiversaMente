@@ -7,7 +7,7 @@ const Gallery = () => {
       <S.Header>
         <ReturnButton />
         <S.Title>Glossário</S.Title>
-        <div style={{ width: "11%" }}></div>
+        <div style={{ width: "14%" }}></div>
       </S.Header>
       <S.Content>
         <S.ItemWrapper>

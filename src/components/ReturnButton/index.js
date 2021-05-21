@@ -10,8 +10,8 @@ const ReturnButton = ({action = 'return'}) => {
   }
   return (
     <S.Wrapper onClick={handleClick}>
-      <img src={BackIcon} alt={"left arrow icon"} />
-      <p>Voltar</p>
+      <img style={{width: '11px', marginRight: '8px'}} src={BackIcon} alt={"left arrow icon"} />
+      <p style={{paddingBottom: '2px'}}>Voltar</p>
     </S.Wrapper>
   );
 };

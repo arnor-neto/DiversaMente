@@ -1,4 +1,5 @@
 import * as S from "./styled";
+import Button from "../../components/Button";
 import { Context } from "../../GlobalContext";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
@@ -17,8 +18,8 @@ const Landing = () => {
     <S.Wrapper>
       <h1>Bem vindo!</h1>
       <S.Form onSubmit={handleSubmit(onSubmit)}>
-        <input placeholder="Nome" {...register("nickname")} />
-        <button>Entrar</button>
+        <S.Input placeholder="Usuário" {...register("nickname")} />
+        <Button>Entrar</Button>
       </S.Form>
     </S.Wrapper>
   );

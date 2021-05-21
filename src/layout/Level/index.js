@@ -1,5 +1,6 @@
 import * as S from "./styled";
 import ReturnButton from "../../components/ReturnButton";
+import Button from "../../components/Button";
 import { useHistory } from "react-router";
 
 const Level = () => {
@@ -13,13 +14,15 @@ const Level = () => {
     <S.Wrapper>
       <S.Header>
         <ReturnButton />
-        <div style={{width: '55%'}}></div>
+        <div style={{width: '60%'}}></div>
       </S.Header>
       <S.Content>
-        <button onClick={startEasy}>Fácil</button>
-        <button>Médio</button>
-        <button>Difícil</button>
+        <Button color={"secondary"} onClick={startEasy}>Fácil</Button>
+        <Button color={"secondary"}>Médio</Button>
+        <Button color={"secondary"}>Difícil</Button>
       </S.Content>
+      <div style={{height: '13vh'}}>
+      </div>
     </S.Wrapper>
   );
 };

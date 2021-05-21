@@ -20,6 +20,7 @@ export const Header = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 87vh;
   padding: 0 6% 6% 6%;

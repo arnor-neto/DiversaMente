@@ -1,4 +1,6 @@
 import * as S from "./styled";
+import Button from "../../components/Button";
+import InfoIcon from "../../assets/InfoIcon.png";
 import { Context } from "../../GlobalContext";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
@@ -25,15 +27,27 @@ const Home = () => {
 
   return (
     <S.Wrapper>
-      <div style={{ height: "10vh" }} />
+      <div style={{ height: "20vh" }} />
       <S.Wrapper>
-        <h1>Olá, {context.nickname.get}</h1>
-        <button onClick={toLevel}>Jogar</button>
-        <button onClick={toGallery}>Glossário</button>
-        <button onClick={toNews}>Notícias</button>
+        <S.Title>Olá, {context.nickname.get}</S.Title>
+        <Button color={"secondary"} onClick={toLevel}>
+          Jogar
+        </Button>
+        <Button color={"secondary"} onClick={toGallery}>
+          Glossário
+        </Button>
+        <Button color={"secondary"} onClick={toNews}>
+          Notícias
+        </Button>
       </S.Wrapper>
-
-      <p style={{marginBottom: "5vh"}}onClick={toAbout}>Sobre a ideia</p>
+      <S.AboutFooter>
+        <img
+          style={{ width: "1.1rem", marginRight: "8px" }}
+          src={InfoIcon}
+          alt={"info"}
+        />
+        <p onClick={toAbout}>Sobre a ideia</p>
+      </S.AboutFooter>
     </S.Wrapper>
   );
 };
