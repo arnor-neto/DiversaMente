@@ -47,7 +47,6 @@ export const CardContainer = styled.div`
   width: 100%;
   height: 0;
   padding-bottom: 100%;
-  cursor: pointer;
   perspective: 1000px;
 `;
 
