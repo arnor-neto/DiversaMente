@@ -6,6 +6,7 @@ import Level from "./layout/Level";
 import Game from "./layout/Game";
 import About from "./layout/About";
 import Gallery from "./layout/Gallery";
+import News from "./layout/News";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/game" component={Game} />
           <Route exact path="/about" component={About} />
           <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/news" component={News} />
         </GlobalContext>
       </Switch>
     </Router>

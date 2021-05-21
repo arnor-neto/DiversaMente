@@ -19,13 +19,21 @@ const Home = () => {
     history.push("/gallery");
   };
 
+  const toNews = () => {
+    history.push("/news");
+  };
+
   return (
     <S.Wrapper>
-      <h1>Olá, {context.nickname.get}</h1>
-      <button onClick={toLevel}>Jogar</button>
-      <button onClick={toGallery}>Glossário</button>
-      <button>Notícias</button>
-      <p onClick={toAbout}>Sobre a ideia</p>
+      <div style={{ height: "10vh" }} />
+      <S.Wrapper>
+        <h1>Olá, {context.nickname.get}</h1>
+        <button onClick={toLevel}>Jogar</button>
+        <button onClick={toGallery}>Glossário</button>
+        <button onClick={toNews}>Notícias</button>
+      </S.Wrapper>
+
+      <p style={{marginBottom: "5vh"}}onClick={toAbout}>Sobre a ideia</p>
     </S.Wrapper>
   );
 };
