@@ -2,14 +2,11 @@ import * as S from "./styled";
 import RestartIcon from "../../assets/RestartIcon.png";
 import QuestionIcon from "../../assets/QuestionIcon.png";
 
-const GameActions = ({handleHelp}) => {
-  const restart = () => {
-    window.location.reload();
-  };
+const GameActions = ({handleRestart, handleHelp}) => {
 
   return (
     <S.Wrapper>
-      <S.Clickable onClick={restart}>
+      <S.Clickable onClick={handleRestart}>
         <img style={{width: '1.2rem', marginRight: '8px'}} src={RestartIcon} alt={"Reiniciar jogo"} />
       </S.Clickable>
       <S.Clickable onClick={handleHelp}>

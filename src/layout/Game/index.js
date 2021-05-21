@@ -5,9 +5,11 @@ import ReturnButton from "../../components/ReturnButton";
 import GameActions from "../../components/GameActions";
 import Modal from "../../components/Modal";
 import Button from "../../components/Button";
-
+import { useHistory } from "react-router";
 
 const Game = () => {
+  let history = useHistory();
+
   const [cards, setCards] = useState([
     {
       text: "1",
@@ -44,6 +46,15 @@ const Game = () => {
   //card modal controllers
   const [displayCardID, setDisplayCardID] = useState();
   const [cardModal, setCardModal] = useState(false);
+
+  //return confirm controllers
+  const [returnModal, setReturnModal] = useState(false);
+
+  //restart confirm controllers
+  const [restartModal, setRestartModal] = useState(false);
+
+  //game end controllers
+  const [endModal, setEndModal] = useState(false);
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -99,7 +110,7 @@ const Game = () => {
   //triggers game end
   useEffect(() => {
     if (deckSize === 0 && cardModal === false) {
-      console.log("O jogo foi concluído");
+      setEndModal(true);
     }
   }, [deckSize, cardModal]);
 
@@ -110,15 +121,28 @@ const Game = () => {
     setCardFaders([...cardFaders, fader]);
   };
 
+  //return click handler
+  const handleReturn = () => {
+    setReturnModal(true);
+  };
+
+  //restart click handlers
+  const handleRestart = () => {
+    setRestartModal(true);
+  };
+  const restart = () => {
+    window.location.reload();
+  };
+
   return (
     <S.Wrapper>
       <S.Header>
-        <ReturnButton />
+        <ReturnButton action={handleReturn} />
         <S.LevelInfo>
           <S.Title>DiversaMente</S.Title>
           <p style={{ margin: 0 }}>Fácil</p>
         </S.LevelInfo>
-        <GameActions handleHelp={toggleHelp} />
+        <GameActions handleRestart={handleRestart} handleHelp={toggleHelp} />
       </S.Header>
       <S.Content>
         {deck.map((item, index) => {
@@ -162,6 +186,79 @@ const Game = () => {
           <S.Title style={{ height: "6vh" }}>{displayCardID}</S.Title>
           <S.P>Você selecionou o card: {displayCardID}, parabéns!</S.P>
           <Button onClick={() => setCardModal(false)}>Entendi</Button>
+        </Modal>
+      )}
+      {returnModal && (
+        <Modal controller={returnModal}>
+          <S.Title>Atenção</S.Title>
+          <S.P>
+            Você tem certeza que deseja sair? Sua partida não estará salva e
+            você perderá todos os movimentos já realizados.
+          </S.P>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              width: "100%",
+            }}
+          >
+            <Button
+              size={"small"}
+              color={"secondary"}
+              onClick={() => setReturnModal(false)}
+            >
+              Cancelar
+            </Button>
+            <Button size={"small"} onClick={() => history.goBack()}>
+              Sair
+            </Button>
+          </div>
+        </Modal>
+      )}
+      {restartModal && (
+        <Modal controller={restartModal}>
+          <S.Title>Atenção</S.Title>
+          <S.P>
+            Você tem certeza que gostaria de reiniciar esta partida? Todos os
+            seus movimentos serão perdidos.
+          </S.P>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              width: "100%",
+            }}
+          >
+            <Button
+              size={"small"}
+              color={"secondary"}
+              onClick={() => setRestartModal(false)}
+            >
+              Cancelar
+            </Button>
+            <Button size={"small"} onClick={restart}>
+              Reiniciar
+            </Button>
+          </div>
+        </Modal>
+      )}
+      {endModal && (
+        <Modal controller={endModal}>
+          <S.Title>Parabéns!</S.Title>
+          <S.P>
+            Você finalizou o Jogo da Memória DiversaMente e agora sabe um
+            pouquinho mais sobre a diversidade de gênero. Jogue novamente para
+            descobrir novos gêneros ou visualize todos acessando o glossário.
+          </S.P>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              width: "100%",
+            }}
+          >
+            <Button onClick={() => history.push("/home")}>Voltar</Button>
+          </div>
         </Modal>
       )}
     </S.Wrapper>
