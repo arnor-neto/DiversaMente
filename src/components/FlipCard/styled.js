@@ -1,11 +1,20 @@
 import styled from "styled-components";
-import { animated } from 'react-spring';
-
+import { animated } from "react-spring";
 
 export const CardContainer = styled(animated.div)`
   background-color: transparent;
-  width: 30%;
-  padding-bottom: 30%;
+  width: ${(props) =>
+    props.difficulty === "easy"
+      ? "30%"
+      : props.difficulty === "medium"
+      ? "22%"
+      : "16%"};
+  padding-bottom: ${(props) =>
+    props.difficulty === "easy"
+      ? "30%"
+      : props.difficulty === "medium"
+      ? "22%"
+      : "16%"};;
   cursor: pointer;
   perspective: 1000px;
 `;

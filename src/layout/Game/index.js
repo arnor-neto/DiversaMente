@@ -1,14 +1,17 @@
 import * as S from "./styled";
 import FlipCard from "../../components/FlipCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReturnButton from "../../components/ReturnButton";
 import GameActions from "../../components/GameActions";
 import Modal from "../../components/Modal";
 import Button from "../../components/Button";
 import { useHistory } from "react-router";
+import { Context } from "../../GlobalContext";
 
 const Game = () => {
   let history = useHistory();
+  const context = useContext(Context);
+  const difficulty = context.difficulty.get;
 
   const [cards, setCards] = useState([
     {
@@ -29,9 +32,63 @@ const Game = () => {
     {
       text: "6",
     },
+    {
+      text: "7",
+    },
+    {
+      text: "8",
+    },
+    {
+      text: "9",
+    },
+    {
+      text: "10",
+    },
+    {
+      text: "11",
+    },
+    {
+      text: "12",
+    },
+    {
+      text: "13",
+    },
+    {
+      text: "14",
+    },
+    {
+      text: "15",
+    },
+    {
+      text: "16",
+    },
+    {
+      text: "17",
+    },
+    {
+      text: "18",
+    },
+    {
+      text: "19",
+    },
+    {
+      text: "20",
+    },
+    {
+      text: "21",
+    },
+    {
+      text: "22",
+    },
+    {
+      text: "23",
+    },
+    {
+      text: "24",
+    },
   ]);
   const [deck, setDeck] = useState([]);
-  const [deckSize, setDeckSize] = useState(12);
+  const [deckSize, setDeckSize] = useState();
   const [selectedCards, setSelectedCards] = useState([]);
   const [cardFlippers, setCardFlippers] = useState([]);
   const [cardFaders, setCardFaders] = useState([]);
@@ -65,15 +122,35 @@ const Game = () => {
 
   //mounts deck when card set changes
   useEffect(() => {
-    var mountedDeck = cards;
-    cards.forEach((card) => {
+    var mountedDeck = [];
+    var cardPool = cards;
+    shuffleArray(cardPool);
+
+    if (difficulty === "easy") {
+      setDeckSize(6 * 2);
+      for (let i = 0; i < 6; i++) {
+        mountedDeck.push(cardPool[i]);
+      }
+    } else if (difficulty === "medium") {
+      setDeckSize(12 * 2);
+      for (let i = 0; i < 12; i++) {
+        mountedDeck.push(cardPool[i]);
+      }
+    } else if (difficulty === "hard") {
+      setDeckSize(24 * 2);
+      for (let i = 0; i < 24; i++) {
+        mountedDeck.push(cardPool[i]);
+      }
+    }
+
+    mountedDeck.forEach((card) => {
       mountedDeck.push(card);
     });
 
     shuffleArray(mountedDeck);
 
     setDeck(mountedDeck);
-  }, [cards]);
+  }, [cards, difficulty]);
 
   //controls game flow
   useEffect(() => {
@@ -140,7 +217,13 @@ const Game = () => {
         <ReturnButton action={handleReturn} />
         <S.LevelInfo>
           <S.Title>DiversaMente</S.Title>
-          <p style={{ margin: 0 }}>Fácil</p>
+          <p style={{ margin: 0 }}>
+            {difficulty === "easy"
+              ? "Fácil"
+              : difficulty === "medium"
+              ? "Médio"
+              : "Difícil"}
+          </p>
         </S.LevelInfo>
         <GameActions handleRestart={handleRestart} handleHelp={toggleHelp} />
       </S.Header>
@@ -152,6 +235,7 @@ const Game = () => {
               text={item.text}
               locked={lock}
               handleSelection={handleSelection}
+              difficulty={context.difficulty.get}
             />
           );
         })}
