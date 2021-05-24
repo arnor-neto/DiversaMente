@@ -10,7 +10,7 @@ const News = () => {
   useEffect(() => {
     axios
       .get(
-        `https://newsapi.org/v2/everything?q=diversidade%20de%20gênero+&language=pt&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+        `https://gnews.io/api/v4/search?q=diversidade%20de%20gênero&token=${process.env.REACT_APP_NEWS_API_KEY}&country=br`
       )
       .then((response) => {
         setArticles(response.data.articles);
@@ -33,7 +33,7 @@ const News = () => {
             <ArticlePreview
               key={index}
               articleURL={article.url}
-              imgURL={article.urlToImage}
+              imgURL={article.image}
               title={article.title}
               content={article.content}
             />
