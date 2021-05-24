@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  align-items: center;
 `;
 
 export const Header = styled.div`
@@ -23,4 +24,8 @@ export const Content = styled.div`
   height: 74vh;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 900px) {
+    width: 50%;
+  }
 `;

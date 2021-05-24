@@ -14,6 +14,10 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+  @media (min-width: 900px) {
+    width: 50%;
+  }
 `;
 
 export const Input = styled.input`
@@ -26,4 +30,8 @@ export const Input = styled.input`
   text-align: center;
   background-color: white;
   outline: none;
+
+  @media (min-width: 900px) {
+    margin-bottom: 2%;
+  }
 `;
