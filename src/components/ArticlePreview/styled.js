@@ -41,6 +41,7 @@ export const Title = styled.p`
   display: -webkit-box;
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+  font-size: 0.9rem;
 `;
 
 export const P = styled.p`
@@ -48,6 +49,7 @@ export const P = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
+  font-size: 0.9rem;
 `;
