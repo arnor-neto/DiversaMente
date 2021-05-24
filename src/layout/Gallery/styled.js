@@ -15,6 +15,11 @@ export const Header = styled.div`
   align-items: center;
   width: 100%;
   height: 13vh;
+
+  @media (min-width: 900px){
+    justify-content: space-between;
+    width: 85%;
+  }
 `;
 
 export const Content = styled.div`
@@ -23,11 +28,16 @@ export const Content = styled.div`
   justify-content: space-evenly;
   width: 100%;
   height: 87vh;
+
+  @media (min-width: 900px){
+    width: 70%;
+  }
 `;
 
 export const Title = styled.p`
   margin: 0;
   font-size: 1.3rem;
+  justify-self: center;
 `;
 
 export const Title2 = styled.p`
@@ -40,6 +50,11 @@ export const ItemWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 45%;
+  margin-bottom: 14px;
+
+  @media (min-width: 900px){
+    width: 22%;
+  }
 `;
 
 export const CardContainer = styled.div`

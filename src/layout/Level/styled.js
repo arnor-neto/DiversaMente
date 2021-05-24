@@ -15,6 +15,11 @@ export const Header = styled.div`
   align-items: center;
   width: 100%;
   height: 13vh;
+
+  @media (min-width: 900px){
+    justify-content: space-between;
+    width: 85%;
+  }
 `;
 
 export const Content = styled.div`

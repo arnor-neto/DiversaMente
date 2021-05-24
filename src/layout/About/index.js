@@ -15,7 +15,7 @@ const About = () => {
       <S.Header>
         <ReturnButton />
         <S.Title>Sobre a ideia</S.Title>
-        <div style={{ width: "15%" }} />
+        <div style={{ width: "60.3px" }} />
       </S.Header>
       <S.Content>
         <S.P>

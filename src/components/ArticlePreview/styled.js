@@ -9,28 +9,42 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   padding: 3%;
   margin-bottom: 2%;
+
+  @media (min-width: 900px) {
+    width: 45%;
+    padding: 1%;
+  }
 `;
 
 export const ArticleImgContainer = styled.div`
   display: flex;
-  width: 30%;
+  width: 38%;
   height: 0;
-  padding-bottom: 30%;
+  padding-bottom: 38%;
   overflow: hidden;
   perspective: 1000px;
   border-radius: 9px;
+
+  @media (min-width: 900px){
+    width: 32%;
+  padding-bottom: 32%;
+  }
 `;
 
 export const ArticleImg = styled.img`
   position: absolute;
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 `;
 
 export const ArticleContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 70%;
-  margin-left: 5%;
+  height: 100%;
+  margin-left: 3%;
+  justify-content: space-evenly;
 `;
 
 export const Title = styled.p`
@@ -52,4 +66,14 @@ export const P = styled.p`
   -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
   font-size: 0.9rem;
+  margin-top: 8px;
+`;
+
+export const Link = styled.a`
+  color: #333333;
+  margin: 0;
+  font-size: 0.95rem;
+  align-self: flex-end;
+  margin-right: 14px;
+  margin-top: 8px;
 `;

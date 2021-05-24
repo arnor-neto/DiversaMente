@@ -13,6 +13,9 @@ export const ModalWrapper = styled(animated.div)`
   background: rgba(0, 0, 0, 0.4);
   overflow-y: scroll;
   backdrop-filter: blur(2px);
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
 `;
 
 export const ModalContent = styled(animated.div)`
@@ -24,4 +27,9 @@ export const ModalContent = styled(animated.div)`
   text-align: center;
   padding: 5%;
   border-radius: 8px;
+  
+  @media (min-width: 900px){
+    width: 45%;
+    padding: 1%;
+  }
 `;

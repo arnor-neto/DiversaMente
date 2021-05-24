@@ -14,9 +14,36 @@ export const CardContainer = styled(animated.div)`
       ? "30%"
       : props.difficulty === "medium"
       ? "22%"
-      : "16%"};;
+      : "16%"};
   cursor: pointer;
   perspective: 1000px;
+
+  @media (min-width: 900px) {
+    width: ${(props) =>
+      props.difficulty === "easy"
+        ? "18%"
+        : props.difficulty === "medium"
+        ? "13%"
+        : "10%"};
+    padding-bottom: ${(props) =>
+      props.difficulty === "easy"
+        ? "18%"
+        : props.difficulty === "medium"
+        ? "13%"
+        : "10%"};
+    margin-left: ${(props) =>
+      props.difficulty === "easy"
+        ? "3%"
+        : props.difficulty === "medium"
+        ? "1%"
+        : "1%"};
+    margin-right: ${(props) =>
+      props.difficulty === "easy"
+        ? "3%"
+        : props.difficulty === "medium"
+        ? "1%"
+        : "1%"};
+  }
 `;
 
 export const CardInner = styled(animated.div)`

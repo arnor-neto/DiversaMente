@@ -25,13 +25,14 @@ const News = () => {
       <S.Header>
         <ReturnButton />
         <S.Title>Notícias</S.Title>
-        <div style={{ width: "15%" }} />
+        <div style={{ width: "60.3px" }} />
       </S.Header>
       <S.Content>
         {articles.map((article, index) => {
           return (
             <ArticlePreview
               key={index}
+              articleURL={article.url}
               imgURL={article.urlToImage}
               title={article.title}
               content={article.content}
