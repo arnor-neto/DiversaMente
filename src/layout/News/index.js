@@ -10,7 +10,7 @@ const News = () => {
   useEffect(() => {
     axios
       .get(
-        `https://newsapi.org/v2/everything?q=LGBT+&language=pt&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+        `https://newsapi.org/v2/everything?q=diversidade%20de%20gênero+&language=pt&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
       )
       .then((response) => {
         setArticles(response.data.articles);
