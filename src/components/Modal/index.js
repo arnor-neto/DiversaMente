@@ -12,7 +12,7 @@ const Modal = ({ children, controller}) => {
   });
 
   return (
-    <S.ModalWrapper style={{ ...fadeSpring }}>
+    <S.ModalWrapper>
       <S.ModalContent style={{ ...fadeSpring }}>{children}</S.ModalContent>
     </S.ModalWrapper>
   );
