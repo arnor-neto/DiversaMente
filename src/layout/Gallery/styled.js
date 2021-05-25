@@ -43,6 +43,7 @@ export const Title = styled.p`
 export const Title2 = styled.p`
   margin: 0;
   font-size: 1.15rem;
+  margin-top: 4px;
 `;
 
 export const ItemWrapper = styled.div`
@@ -50,7 +51,8 @@ export const ItemWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 45%;
-  margin-bottom: 14px;
+  cursor: pointer;
+  margin-bottom: 20px;
 
   @media (min-width: 900px){
     width: 22%;
@@ -76,4 +78,6 @@ export const CardInner = styled.div`
 
 export const CardImg = styled.img`
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 `;
