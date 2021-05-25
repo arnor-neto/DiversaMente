@@ -4,16 +4,19 @@ export const Context = createContext();
 
 const InitialState = {
   nickname: localStorage.getItem("nickname"),
-  difficulty: sessionStorage.getItem("difficulty"),
+  difficulty: localStorage.getItem("difficulty"),
+  selectedCardID: localStorage.getItem("selectedCardID")
 };
 
 export const GlobalContext = ({ children }) => {
   const [nickname, setNickname] = useState(InitialState.nickname);
   const [difficulty, setDifficulty] = useState(InitialState.difficulty);
+  const [selectedCardID, setSelectedCardID] = useState(InitialState.selectedCardID);
 
   const store = {
     nickname: { get: nickname, set: setNickname },
     difficulty: { get: difficulty, set: setDifficulty },
+    selectedCardID: {get: selectedCardID, set: setSelectedCardID}
   };
 
   useEffect(() => {
@@ -21,8 +24,12 @@ export const GlobalContext = ({ children }) => {
   }, [nickname]);
 
   useEffect(() => {
-    sessionStorage.setItem("difficulty", difficulty);
+    localStorage.setItem("difficulty", difficulty);
   }, [difficulty]);
+
+  useEffect(() => {
+    localStorage.setItem("selectedCardID", selectedCardID);
+  }, [selectedCardID]);
 
   return <Context.Provider value={store}>{children}</Context.Provider>;
 };
