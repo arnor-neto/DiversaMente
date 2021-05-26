@@ -28,6 +28,7 @@ export const Content = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
+  min-height: 87vh;
 
   @media (min-width: 900px){
     width: 70%;

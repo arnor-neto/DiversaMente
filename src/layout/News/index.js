@@ -16,7 +16,7 @@ const News = () => {
         setArticles(response.data.articles);
       });
     return () => {
-      setArticles({}); // This worked for me
+      setArticles({});
     };
   }, []);
 

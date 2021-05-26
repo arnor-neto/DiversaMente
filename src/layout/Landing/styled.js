@@ -26,6 +26,10 @@ export const Column = styled.div`
   flex-direction: column;
   margin-bottom: 8px;
   align-items: center;
+
+  @media (min-width: 900px) {
+    width: 50%;
+  }
 `
 
 export const Input = styled.input`
@@ -53,4 +57,8 @@ export const Input = styled.input`
 export const Logo = styled.img`
   width: 36%;
   margin-bottom: 32px;
+
+  @media (min-width: 900px) {
+    width: 10%;
+  }
 `

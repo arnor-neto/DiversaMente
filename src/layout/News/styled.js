@@ -27,6 +27,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-height: 87vh;
   padding: 0 2% 2% 2%;
   padding-bottom: 18px;
 
