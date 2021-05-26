@@ -4,7 +4,6 @@ import { useContext, useEffect, useState } from "react";
 import ReturnButton from "../../components/ReturnButton";
 import GameActions from "../../components/GameActions";
 import Modal from "../../components/Modal";
-import Button from "../../components/Button";
 import ModalButton from "../../components/ModalButton";
 import { useHistory } from "react-router";
 import { Context } from "../../GlobalContext";
@@ -123,7 +122,7 @@ const Game = () => {
         setCardFaders([]);
       }
     }
-  }, [selectedCards, cardFlippers, cardFaders, deckSize]);
+  }, [deck, selectedCards, cardFlippers, cardFaders, deckSize]);
 
   //triggers game end
   useEffect(() => {

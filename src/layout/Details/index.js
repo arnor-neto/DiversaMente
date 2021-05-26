@@ -15,7 +15,7 @@ const Details = () => {
       .then((response) => {
         setCard(response.data);
       });
-  }, []);
+  }, [cardID]);
 
   return (
     <S.Wrapper>
