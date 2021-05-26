@@ -30,7 +30,7 @@ const Game = () => {
   };
 
   //card modal controllers
-  const [displayCardID, setDisplayCardID] = useState();
+  const [displayCard, setDisplayCard] = useState();
   const [cardModal, setCardModal] = useState(false);
 
   //return confirm controllers
@@ -108,7 +108,7 @@ const Game = () => {
         setCardFlippers([]);
         setCardFaders([]);
         setDeckSize(deckSize - 2);
-        setDisplayCardID(selectedCards[1]);
+        setDisplayCard(deck.find((card) => card.name === selectedCards[1]));
         setCardModal(true);
         setLock(false);
       } else {
@@ -217,9 +217,18 @@ const Game = () => {
       )}
       {cardModal && (
         <Modal controller={cardModal}>
-          <S.ModalTitle style={{ height: "6vh" }}>{displayCardID}</S.ModalTitle>
-          <S.P>Você selecionou o card: {displayCardID}, parabéns!</S.P>
-          <Button onClick={() => setCardModal(false)}>Entendi</Button>
+          <S.ModalHeader>
+            <div style={{ width: "22px" }}></div>
+            <S.ModalTitle>{displayCard.name}</S.ModalTitle>
+            <img
+              onClick={() => setCardModal(false)}
+              src={CloseIcon}
+              alt={"fechar"}
+              style={{ marginRight: "8px", cursor: "pointer" }}
+            />
+          </S.ModalHeader>
+          <S.Flag src={displayCard.image}/>
+          <S.P>{displayCard.description}</S.P>
         </Modal>
       )}
       {returnModal && (
