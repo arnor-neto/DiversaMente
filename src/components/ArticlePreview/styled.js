@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   padding: 3%;
   margin-bottom: 2%;
-  background: rgba(242, 242, 242, 0.85);
+  background: rgba(242, 242, 242, 0.7);
   cursor: pointer;
 
   @media (min-width: 900px) {

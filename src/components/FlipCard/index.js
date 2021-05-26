@@ -1,6 +1,7 @@
 import * as S from "./styled";
 import { useSpring } from "react-spring";
 import { useState } from "react";
+import LogoMin from "../../assets/LogoMin.png";
 
 const FlipCard = ({ name, image, locked, handleSelection, difficulty }) => {
   const [flipped, setFlipped] = useState(true);
@@ -39,7 +40,7 @@ const FlipCard = ({ name, image, locked, handleSelection, difficulty }) => {
           <S.CardImg src={image}/>
         </S.CardFront>
         <S.CardBack onClick={flip}>
-          <h1>Back</h1>
+          <S.CardLogo src={LogoMin}/>
         </S.CardBack>
       </S.CardInner>
     </S.CardContainer>

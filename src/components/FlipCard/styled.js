@@ -82,8 +82,12 @@ export const CardBack = styled(animated.div)`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background-color: dodgerblue;
+  background-color: rgba(242, 242, 242, 0.4);
   color: white;
   transform: rotateY(180deg);
   border-radius: 8px;
+`;
+
+export const CardLogo = styled.img`
+  width: 65%;
 `;
