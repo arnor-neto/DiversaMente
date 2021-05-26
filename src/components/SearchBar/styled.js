@@ -27,6 +27,7 @@ export const Input = styled.input`
   background-color: white;
   outline: none;
   display: ${(props) => (props.expanded ? "inline" : "none")};
+  width: 100% ;
 
   @media (min-width: 900px) {
     font-size: 1rem;
