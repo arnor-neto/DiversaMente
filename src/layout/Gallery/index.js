@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
 import { Context } from "../../GlobalContext";
+import SearchBar from "../../components/SearchBar";
 
 const Gallery = () => {
   let history = useHistory();
@@ -71,6 +72,8 @@ const Gallery = () => {
         "https://i.ibb.co/HgDkXKz/kingender-2-by-pride-flags-dac0km3-300x180.png",
     },
   ]);
+  const [displayedCards, setDisplayedCards] = useState(cards);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const selectCard = (id) => {
     context.selectedCardID.set(id);
@@ -88,15 +91,23 @@ const Gallery = () => {
       });
   });
 
+  useEffect(() => {
+    let filteredCards = cards.filter((card) => {
+      return card.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    setDisplayedCards(filteredCards);
+  }, [cards, searchTerm]);
+
   return (
     <S.Wrapper>
       <S.Header>
         <ReturnButton />
         <S.Title>Glossário</S.Title>
         <div style={{ width: "60.3px" }}></div>
+        <SearchBar value={searchTerm} setValue={setSearchTerm} />
       </S.Header>
       <S.Content>
-        {cards.map((card, index) => {
+        {displayedCards.map((card, index) => {
           return (
             <S.ItemWrapper
               key={index}
