@@ -2,14 +2,14 @@ import * as S from "./styled";
 import { useSpring } from "react-spring";
 import { useState } from "react";
 
-const FlipCard = ({ text, locked, handleSelection, difficulty }) => {
+const FlipCard = ({ name, image, locked, handleSelection, difficulty }) => {
   const [flipped, setFlipped] = useState(true);
   const [faded, setFaded] = useState(false);
 
   const flip = () => {
     if (!locked) {
       setFlipped(!flipped);
-      handleSelection(text, setFlipped, setFaded);
+      handleSelection(name, setFlipped, setFaded);
     }
   };
 
@@ -36,7 +36,7 @@ const FlipCard = ({ text, locked, handleSelection, difficulty }) => {
     <S.CardContainer style={{ ...fadeSpring }} difficulty={difficulty}>
       <S.CardInner style={{ ...flipSpring }}>
         <S.CardFront>
-          <h1>{text}</h1>
+          <S.CardImg src={image}/>
         </S.CardFront>
         <S.CardBack onClick={flip}>
           <h1>Back</h1>

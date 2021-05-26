@@ -15,9 +15,6 @@ const News = () => {
       .then((response) => {
         setArticles(response.data.articles);
       });
-    return () => {
-      setArticles({});
-    };
   }, []);
 
   return (

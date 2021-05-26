@@ -9,86 +9,13 @@ import ModalButton from "../../components/ModalButton";
 import { useHistory } from "react-router";
 import { Context } from "../../GlobalContext";
 import CloseIcon from "../../assets/CloseIcon.png";
+import axios from "axios";
 
 const Game = () => {
   let history = useHistory();
   const context = useContext(Context);
   const difficulty = context.difficulty.get;
 
-  const [cards, setCards] = useState([
-    {
-      text: "1",
-    },
-    {
-      text: "2",
-    },
-    {
-      text: "3",
-    },
-    {
-      text: "4",
-    },
-    {
-      text: "5",
-    },
-    {
-      text: "6",
-    },
-    {
-      text: "7",
-    },
-    {
-      text: "8",
-    },
-    {
-      text: "9",
-    },
-    {
-      text: "10",
-    },
-    {
-      text: "11",
-    },
-    {
-      text: "12",
-    },
-    {
-      text: "13",
-    },
-    {
-      text: "14",
-    },
-    {
-      text: "15",
-    },
-    {
-      text: "16",
-    },
-    {
-      text: "17",
-    },
-    {
-      text: "18",
-    },
-    {
-      text: "19",
-    },
-    {
-      text: "20",
-    },
-    {
-      text: "21",
-    },
-    {
-      text: "22",
-    },
-    {
-      text: "23",
-    },
-    {
-      text: "24",
-    },
-  ]);
   const [deck, setDeck] = useState([]);
   const [deckSize, setDeckSize] = useState();
   const [selectedCards, setSelectedCards] = useState([]);
@@ -123,7 +50,7 @@ const Game = () => {
   }
 
   //mounts deck when card set changes
-  useEffect(() => {
+  const mountDeck = (cards) => {
     var mountedDeck = [];
     var cardPool = cards;
     shuffleArray(cardPool);
@@ -152,7 +79,19 @@ const Game = () => {
     shuffleArray(mountedDeck);
 
     setDeck(mountedDeck);
-  }, [cards, difficulty]);
+  };
+
+  //obtains all cards from server
+  useEffect(() => {
+    axios
+      .get("https://diversamente-api.herokuapp.com/api/cards/list")
+      .then((response) => {
+        mountDeck(response.data.data);
+      })
+      .catch((err) => {
+        console.log("erro");
+      });
+  }, []);
 
   //controls game flow
   useEffect(() => {
@@ -234,7 +173,8 @@ const Game = () => {
           return (
             <FlipCard
               key={index}
-              text={item.text}
+              name={item.name}
+              image={item.image}
               locked={lock}
               handleSelection={handleSelection}
               difficulty={context.difficulty.get}
@@ -284,8 +224,8 @@ const Game = () => {
       )}
       {returnModal && (
         <Modal controller={returnModal}>
-          <S.ModalTitle style={{marginBottom: '6px'}}>Atenção</S.ModalTitle>
-          <S.P style={{marginBottom: '18px'}}>
+          <S.ModalTitle style={{ marginBottom: "6px" }}>Atenção</S.ModalTitle>
+          <S.P style={{ marginBottom: "18px" }}>
             Você tem certeza que deseja sair? Sua partida não estará salva e
             você perderá todos os movimentos já realizados.
           </S.P>
@@ -311,8 +251,8 @@ const Game = () => {
       )}
       {restartModal && (
         <Modal controller={restartModal}>
-          <S.ModalTitle style={{marginBottom: '6px'}}>Atenção</S.ModalTitle>
-          <S.P style={{marginBottom: '18px'}}>
+          <S.ModalTitle style={{ marginBottom: "6px" }}>Atenção</S.ModalTitle>
+          <S.P style={{ marginBottom: "18px" }}>
             Você tem certeza que gostaria de reiniciar esta partida? Todos os
             seus movimentos serão perdidos.
           </S.P>
@@ -351,7 +291,9 @@ const Game = () => {
               width: "100%",
             }}
           >
-            <ModalButton onClick={() => history.push("/home")}>Voltar</ModalButton>
+            <ModalButton onClick={() => history.push("/home")}>
+              Voltar
+            </ModalButton>
           </div>
         </Modal>
       )}

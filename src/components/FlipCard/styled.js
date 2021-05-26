@@ -65,6 +65,13 @@ export const CardFront = styled(animated.div)`
   background-color: #bbb;
   color: black;
   border-radius: 8px;
+  overflow: hidden;
+`;
+
+export const CardImg = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 `;
 
 export const CardBack = styled(animated.div)`
