@@ -9,6 +9,8 @@ export const Wrapper = styled.div`
   border-radius: 8px;
   padding: 3%;
   margin-bottom: 2%;
+  background: rgba(242, 242, 242, 0.85);
+  cursor: pointer;
 
   @media (min-width: 900px) {
     width: 45%;
@@ -25,9 +27,9 @@ export const ArticleImgContainer = styled.div`
   perspective: 1000px;
   border-radius: 9px;
 
-  @media (min-width: 900px){
+  @media (min-width: 900px) {
     width: 32%;
-  padding-bottom: 32%;
+    padding-bottom: 32%;
   }
 `;
 
@@ -66,14 +68,9 @@ export const P = styled.p`
   -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
   font-size: 0.9rem;
-  margin-top: 8px;
 `;
 
 export const Link = styled.a`
-  color: #333333;
   margin: 0;
-  font-size: 0.95rem;
-  align-self: flex-end;
-  margin-right: 14px;
-  margin-top: 8px;
+  outline: none;
 `;

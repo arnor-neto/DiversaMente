@@ -5,3 +5,9 @@ export const Wrapper = styled.div`
   align-items: center;
   cursor: pointer;
 `;
+
+export const Text = styled.p`
+  font-weight: 400;
+  padding-top: 1px;
+  color: #F2F2F2;
+`;

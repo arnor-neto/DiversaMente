@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  background: linear-gradient(180deg, #C33764 0%, #1D2671 100%);
 `;
 
 export const Header = styled.div`
@@ -38,10 +39,12 @@ export const Content = styled.div`
 export const Title = styled.p`
   margin: 0;
   font-size: 1.3rem;
+  color: #F2F2F2;
 `;
 
 export const P = styled.p`
   margin: 0;
   margin-bottom: 1.3rem;
   text-align: center;
+  color: #F2F2F2;
 `;

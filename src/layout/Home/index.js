@@ -27,13 +27,21 @@ const Home = () => {
 
   return (
     <S.Wrapper>
-      <div style={{ height: "20vh" }} />
+      <div style={{ height: "15vh" }} />
       <S.Content>
         <S.Title>Olá, {context.nickname.get}</S.Title>
-        <Button color={"secondary"} onClick={toLevel}>
+        <Button
+          style={{ marginBottom: "16px" }}
+          color={"secondary"}
+          onClick={toLevel}
+        >
           Jogar
         </Button>
-        <Button color={"secondary"} onClick={toGallery}>
+        <Button
+          style={{ marginBottom: "16px" }}
+          color={"secondary"}
+          onClick={toGallery}
+        >
           Glossário
         </Button>
         <Button color={"secondary"} onClick={toNews}>
@@ -43,11 +51,11 @@ const Home = () => {
       <S.AboutFooter>
         <S.AboutLink onClick={toAbout}>
           <img
-            style={{ width: "1.1rem", marginRight: "8px" }}
+            style={{ width: "18px", marginRight: "8px" }}
             src={InfoIcon}
             alt={"info"}
           />
-          <p>Sobre a ideia</p>
+          <p style={{ color: "#F2F2F2", fontWeight: 300, marginTop: '18px'}}>Sobre a ideia</p>
         </S.AboutLink>
       </S.AboutFooter>
     </S.Wrapper>

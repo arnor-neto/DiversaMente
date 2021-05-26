@@ -27,6 +27,7 @@ export const ModalContent = styled(animated.div)`
   text-align: center;
   padding: 5%;
   border-radius: 8px;
+  background: rgba(242, 242, 242, 0.9);
   
   @media (min-width: 900px){
     width: 45%;

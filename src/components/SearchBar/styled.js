@@ -5,13 +5,12 @@ export const Wrapper = styled.div`
   position: fixed;
   justify-content: ${(props) => (props.expanded ? "space-between" : "center")};
   align-items: center;
-  right: 8%;
-  border: 1px solid #dcdcdc;
-  width: ${(props) => (props.expanded ? "80%" : "40px")};
-  height: 40px;
+  right: 6%;
+  width: ${(props) => (props.expanded ? "82%" : "36px")};
+  height: 36px;
   border-radius: ${(props) => (props.expanded ? "24px" : "50%")};
   overflow: hidden;
-  background-color: white;
+  background-color: ${(props) => (props.expanded ? "#ffffff" : "rgba(0, 0, 0, 0)")};
   z-index: 10;
 
   @media (min-width: 900px) {
@@ -35,13 +34,7 @@ export const Input = styled.input`
 `;
 
 export const Icon = styled.img`
-  width: 18px;
-  height: 18px;
+  width: ${(props) => (props.expanded ? "16px" : "20px")};;
   margin-right: ${(props) => (props.expanded ? "18px" : 0)};
   cursor: pointer;
-
-  @media (min-width: 900px) {
-    width: 16px;
-    height: 16px;
-  }
 `;

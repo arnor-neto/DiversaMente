@@ -31,10 +31,10 @@ const Level = () => {
         <div style={{ width: "60%" }}></div>
       </S.Header>
       <S.Content>
-        <Button color={"secondary"} onClick={startEasy}>
+        <Button style={{marginBottom: '16px'}} color={"secondary"} onClick={startEasy}>
           Fácil
         </Button>
-        <Button color={"secondary"} onClick={startMedium}>
+        <Button style={{marginBottom: '16px'}} color={"secondary"} onClick={startMedium}>
           Médio
         </Button>
         <Button color={"secondary"} onClick={startHard}>

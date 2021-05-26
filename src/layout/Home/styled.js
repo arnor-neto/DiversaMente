@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  background: linear-gradient(180deg, #C33764 0%, #1D2671 100%);
 `;
 
 export const Content = styled.div`
@@ -15,7 +16,7 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
 
   @media (min-width: 900px) {
     width: 50%;
@@ -27,14 +28,15 @@ export const AboutFooter = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 20vh;
+  height: 15vh;
 `;
 
 export const Title = styled.p`
   margin: 0;
-  margin-bottom: 1.4rem;
+  margin-bottom: 32px;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 400;
+  color: #F2F2F2;
 `;
 
 export const AboutLink = styled.div`

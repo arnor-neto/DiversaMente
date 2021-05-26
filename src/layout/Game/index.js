@@ -5,8 +5,10 @@ import ReturnButton from "../../components/ReturnButton";
 import GameActions from "../../components/GameActions";
 import Modal from "../../components/Modal";
 import Button from "../../components/Button";
+import ModalButton from "../../components/ModalButton";
 import { useHistory } from "react-router";
 import { Context } from "../../GlobalContext";
+import CloseIcon from "../../assets/CloseIcon.png";
 
 const Game = () => {
   let history = useHistory();
@@ -217,7 +219,7 @@ const Game = () => {
         <ReturnButton action={handleReturn} />
         <S.LevelInfo>
           <S.Title>DiversaMente</S.Title>
-          <p style={{ margin: 0 }}>
+          <p style={{ margin: 0, color: "#f2f2f2" }}>
             {difficulty === "easy"
               ? "Fácil"
               : difficulty === "medium"
@@ -242,7 +244,16 @@ const Game = () => {
       </S.Content>
       {helpModal && (
         <Modal controller={helpModal}>
-          <S.Title style={{ height: "6vh" }}>Como jogar</S.Title>
+          <S.ModalHeader>
+            <div style={{ width: "22px" }}></div>
+            <S.ModalTitle>Como jogar</S.ModalTitle>
+            <img
+              onClick={toggleHelp}
+              src={CloseIcon}
+              alt={"fechar"}
+              style={{ marginRight: "8px", cursor: "pointer" }}
+            />
+          </S.ModalHeader>
           <S.P>
             Com um toque suave na tela selecione a carta que você quer desvirar.
           </S.P>
@@ -262,73 +273,72 @@ const Game = () => {
             Não esqueça de avançar para o próximo nível e receber mais
             conhecimento!
           </S.P>
-          <Button onClick={toggleHelp}>Entendi</Button>
         </Modal>
       )}
       {cardModal && (
         <Modal controller={cardModal}>
-          <S.Title style={{ height: "6vh" }}>{displayCardID}</S.Title>
+          <S.ModalTitle style={{ height: "6vh" }}>{displayCardID}</S.ModalTitle>
           <S.P>Você selecionou o card: {displayCardID}, parabéns!</S.P>
           <Button onClick={() => setCardModal(false)}>Entendi</Button>
         </Modal>
       )}
       {returnModal && (
         <Modal controller={returnModal}>
-          <S.Title>Atenção</S.Title>
-          <S.P>
+          <S.ModalTitle style={{marginBottom: '6px'}}>Atenção</S.ModalTitle>
+          <S.P style={{marginBottom: '18px'}}>
             Você tem certeza que deseja sair? Sua partida não estará salva e
             você perderá todos os movimentos já realizados.
           </S.P>
           <div
             style={{
               display: "flex",
-              justifyContent: "space-evenly",
+              justifyContent: "space-around",
               width: "100%",
             }}
           >
-            <Button
+            <ModalButton
               size={"small"}
               color={"secondary"}
               onClick={() => setReturnModal(false)}
             >
               Cancelar
-            </Button>
-            <Button size={"small"} onClick={() => history.goBack()}>
+            </ModalButton>
+            <ModalButton size={"small"} onClick={() => history.goBack()}>
               Sair
-            </Button>
+            </ModalButton>
           </div>
         </Modal>
       )}
       {restartModal && (
         <Modal controller={restartModal}>
-          <S.Title>Atenção</S.Title>
-          <S.P>
+          <S.ModalTitle style={{marginBottom: '6px'}}>Atenção</S.ModalTitle>
+          <S.P style={{marginBottom: '18px'}}>
             Você tem certeza que gostaria de reiniciar esta partida? Todos os
             seus movimentos serão perdidos.
           </S.P>
           <div
             style={{
               display: "flex",
-              justifyContent: "space-evenly",
+              justifyContent: "space-around",
               width: "100%",
             }}
           >
-            <Button
+            <ModalButton
               size={"small"}
               color={"secondary"}
               onClick={() => setRestartModal(false)}
             >
               Cancelar
-            </Button>
-            <Button size={"small"} onClick={restart}>
+            </ModalButton>
+            <ModalButton size={"small"} onClick={restart}>
               Reiniciar
-            </Button>
+            </ModalButton>
           </div>
         </Modal>
       )}
       {endModal && (
         <Modal controller={endModal}>
-          <S.Title>Parabéns!</S.Title>
+          <S.ModalTitle>Parabéns!</S.ModalTitle>
           <S.P>
             Você finalizou o Jogo da Memória DiversaMente e agora sabe um
             pouquinho mais sobre a diversidade de gênero. Jogue novamente para
@@ -341,7 +351,7 @@ const Game = () => {
               width: "100%",
             }}
           >
-            <Button onClick={() => history.push("/home")}>Voltar</Button>
+            <ModalButton onClick={() => history.push("/home")}>Voltar</ModalButton>
           </div>
         </Modal>
       )}

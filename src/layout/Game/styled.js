@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  background: linear-gradient(180deg, #C33764 0%, #1D2671 100%);
 `;
 
 export const Header = styled.div`
@@ -14,7 +15,7 @@ export const Header = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 13vh;
+  height: 12vh;
 
   @media (min-width: 900px){
     justify-content: space-between;
@@ -31,8 +32,8 @@ export const LevelInfo = styled.div`
 `;
 export const Title = styled.p`
   margin: 0;
-  margin-bottom: 6px;
   font-size: 1.3rem;
+  color: #f2f2f2;
 
   @media (min-width: 900px){
     margin-top: 2%;
@@ -41,7 +42,8 @@ export const Title = styled.p`
 
 export const P = styled.p`
   margin: 0;
-  margin-bottom: 1.3em;
+  margin-bottom: 8px;
+  color: #0D0C0C;
 
   @media (min-width: 900px){
     width: 80%;
@@ -54,9 +56,26 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: 85vh;
+  height: 86vh;
 
   @media (min-width: 900px){
     width: 70%;
   }
+`;
+
+export const ModalTitle = styled.p`
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0D0C0C;
+`;
+
+export const ModalHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 6vh;
 `;

@@ -1,15 +1,7 @@
 import * as S from "./styled";
 import ReturnButton from "../../components/ReturnButton";
-import Button from "../../components/Button";
-import { useHistory } from "react-router-dom";
 
 const About = () => {
-  let history = useHistory();
-
-  const toLevel = () => {
-    history.push("/level");
-  };
-
   return (
     <S.Wrapper>
       <S.Header>
@@ -34,9 +26,6 @@ const About = () => {
           Incentivando o ensino sobre a diversidade de gênero de forma leve e
           divertida.
         </S.P>
-        <Button onClick={toLevel}>
-          Jogar
-        </Button>
       </S.Content>
     </S.Wrapper>
   );

@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   align-items: center;
+  background: linear-gradient(180deg, #C33764 0%, #1D2671 100%);
 `;
 
 export const Header = styled.div`

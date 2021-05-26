@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  background: linear-gradient(180deg, #c33764 0%, #1d2671 100%);
+  background-attachment: fixed;
 `;
 
 export const Header = styled.div`
@@ -27,7 +28,6 @@ export const Content = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
-  height: 87vh;
 
   @media (min-width: 900px){
     width: 70%;
@@ -38,12 +38,15 @@ export const Title = styled.p`
   margin: 0;
   font-size: 1.3rem;
   justify-self: center;
+  color: #F2F2F2;
 `;
 
 export const Title2 = styled.p`
   margin: 0;
-  font-size: 1.15rem;
-  margin-top: 4px;
+  font-size: 1.1rem;
+  margin-top: 6px;
+  color: #F2F2F2;
+  font-weight: 300;
 `;
 
 export const ItemWrapper = styled.div`
