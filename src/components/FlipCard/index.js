@@ -38,10 +38,10 @@ const FlipCard = ({ name, image, locked, handleSelection, difficulty }) => {
   return (
     <S.CardContainer style={{ ...fadeSpring }} difficulty={difficulty}>
       <S.CardInner style={{ ...flipSpring }}>
-        <S.CardFront>
+        <S.CardFront flipped={flipped}>
           <S.CardImg src={image}/>
         </S.CardFront>
-        <S.CardBack onClick={flip}>
+        <S.CardBack onClick={flip} flipped={flipped}>
           <S.CardLogo src={LogoMin}/>
         </S.CardBack>
       </S.CardInner>

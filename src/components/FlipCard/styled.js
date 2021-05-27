@@ -18,6 +18,7 @@ export const CardContainer = styled(animated.div)`
       : "16%"};
   cursor: pointer;
   perspective: 1000px;
+  -webkit-perspective: 1000px;
 
   @media (min-width: 900px) {
     width: ${(props) =>
@@ -68,6 +69,7 @@ export const CardFront = styled(animated.div)`
   color: black;
   border-radius: 8px;
   overflow: hidden;
+  z-index: ${props => props.flipped ? 0 : 10};
 `;
 
 export const CardImg = styled.img`
@@ -91,6 +93,7 @@ export const CardBack = styled(animated.div)`
   color: white;
   transform: rotateY(180deg);
   border-radius: 8px;
+  z-index: ${props => props.flipped ? 10 : 0};
 `;
 
 export const CardLogo = styled.img`
