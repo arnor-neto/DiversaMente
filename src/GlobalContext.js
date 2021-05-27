@@ -6,8 +6,8 @@ const InitialState = {
   nickname: localStorage.getItem("nickname"),
   difficulty: localStorage.getItem("difficulty"),
   selectedCardID: localStorage.getItem("selectedCardID"),
-  mediumUnlocked: localStorage.getItem("mediumUnlocked"),
-  hardUnlocked: localStorage.getItem("hardUnlocked"),
+  mediumUnlocked: localStorage.getItem("mediumUnlocked") || "false",
+  hardUnlocked: localStorage.getItem("hardUnlocked") || "false",
 };
 
 export const GlobalContext = ({ children }) => {

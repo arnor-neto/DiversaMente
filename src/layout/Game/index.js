@@ -129,10 +129,10 @@ const Game = () => {
     if (deckSize === 0 && cardModal === false) {
       setEndModal(true);
       if (difficulty === "easy") {
-        context.mediumUnlocked.set(true);
+        context.mediumUnlocked.set("true");
       }
       if (difficulty === "medium") {
-        context.hardUnlocked.set(true);
+        context.hardUnlocked.set("true");
       }
     }
   }, [deckSize, cardModal]);

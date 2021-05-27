@@ -8,6 +8,8 @@ import { Context } from "../../GlobalContext";
 const Level = () => {
   let history = useHistory();
   const context = useContext(Context);
+  const mediumUnlocked = context.mediumUnlocked.get;
+  const hardUnlocked = context.hardUnlocked.get;
 
   const toHome = () => {
     history.push("/home");
@@ -42,7 +44,7 @@ const Level = () => {
         >
           Fácil
         </Button>
-        {context.mediumUnlocked.get ? (
+        {mediumUnlocked === "true" ? (
           <Button
             style={{ marginBottom: "16px" }}
             color={"secondary"}
@@ -63,7 +65,7 @@ const Level = () => {
             Médio
           </Button>
         )}
-        {context.hardUnlocked.get ? (
+        {hardUnlocked === "true" ? (
           <Button color={"secondary"} onClick={startHard}>
             Difícil
           </Button>
