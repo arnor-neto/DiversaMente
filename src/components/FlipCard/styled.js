@@ -3,6 +3,7 @@ import { animated } from "react-spring";
 
 export const CardContainer = styled(animated.div)`
   background-color: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   width: ${(props) =>
     props.difficulty === "easy"
       ? "30%"

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import LogoFull from "../../assets/LogoFull.png";
+import InfoIcon from "../../assets/InfoIcon.png";
 
 const Landing = () => {
   let history = useHistory();
@@ -28,7 +29,12 @@ const Landing = () => {
             placeholder="Usuário"
             {...register("nickname", { required: true })}
           />
-          {errors.nickname && <span>This field is required</span>}
+          {errors.nickname && (
+            <div style={{display: 'flex', alignItems: 'center'}}>
+              <img style={{width: '1rem', marginRight: '8px'}} src={InfoIcon} alt={"aviso"} />
+              <span style={{color: '#ffffff', fontWeight: 300}}>Campo não preenchido.</span>
+            </div>
+          )}
         </S.Column>
         <Button>Entrar</Button>
       </S.Form>
