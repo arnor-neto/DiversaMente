@@ -63,6 +63,7 @@ export const CardFront = styled(animated.div)`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   background-color: #bbb;
   color: black;
   border-radius: 8px;
@@ -74,6 +75,7 @@ export const CardImg = styled.img`
   width: 100%;
   object-fit: cover;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 `;
 
 export const CardBack = styled(animated.div)`
@@ -84,6 +86,7 @@ export const CardBack = styled(animated.div)`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   background-color: rgba(242, 242, 242, 0.4);
   color: white;
   transform: rotateY(180deg);

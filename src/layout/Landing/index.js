@@ -32,7 +32,7 @@ const Landing = () => {
           {errors.nickname && (
             <div style={{display: 'flex', alignItems: 'center'}}>
               <img style={{width: '1rem', marginRight: '8px'}} src={InfoIcon} alt={"aviso"} />
-              <span style={{color: '#ffffff', fontWeight: 300}}>Campo não preenchido.</span>
+              <span style={{color: '#ffffff', fontWeight: 300, fontSize: '0.9rem'}}>Campo não preenchido.</span>
             </div>
           )}
         </S.Column>
