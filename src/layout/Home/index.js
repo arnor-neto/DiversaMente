@@ -1,6 +1,7 @@
 import * as S from "./styled";
 import Button from "../../components/Button";
 import InfoIcon from "../../assets/InfoIcon.png";
+import LogoutButton from "../../components/LogoutButton";
 import { Context } from "../../GlobalContext";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
@@ -27,7 +28,10 @@ const Home = () => {
 
   return (
     <S.Wrapper>
-      <div style={{ height: "15vh" }} />
+      <S.Header>
+        <LogoutButton/>
+        <div style={{ width: "60%" }}></div>
+      </S.Header>
       <S.Content>
         <S.Title>Olá, {context.nickname.get}</S.Title>
         <Button
