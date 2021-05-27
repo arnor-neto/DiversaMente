@@ -26,9 +26,11 @@ const FlipCard = ({ name, image, locked, handleSelection, difficulty }) => {
   const fadeSpring = useSpring({
     from: {
       opacity: `${faded ? 1 : 0}`,
+      cursor: 'pointer'
     },
     to: {
       opacity: `${faded ? 0 : 1}`,
+      cursor: `${faded? 'default' : 'pointer'}`,
     },
     config: { duration: 650 },
   });

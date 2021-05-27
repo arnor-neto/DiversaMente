@@ -128,6 +128,12 @@ const Game = () => {
   useEffect(() => {
     if (deckSize === 0 && cardModal === false) {
       setEndModal(true);
+      if (difficulty === "easy") {
+        context.mediumUnlocked.set(true);
+      }
+      if (difficulty === "medium") {
+        context.hardUnlocked.set(true);
+      }
     }
   }, [deckSize, cardModal]);
 
@@ -226,7 +232,7 @@ const Game = () => {
               style={{ marginRight: "8px", cursor: "pointer" }}
             />
           </S.ModalHeader>
-          <S.Flag src={displayCard.image}/>
+          <S.Flag src={displayCard.image} />
           <S.P>{displayCard.description}</S.P>
         </Modal>
       )}
@@ -286,12 +292,24 @@ const Game = () => {
       )}
       {endModal && (
         <Modal controller={endModal}>
-          <S.ModalTitle>Parabéns!</S.ModalTitle>
-          <S.P>
-            Você finalizou o Jogo da Memória DiversaMente e agora sabe um
-            pouquinho mais sobre a diversidade de gênero. Jogue novamente para
-            descobrir novos gêneros ou visualize todos acessando o glossário.
-          </S.P>
+          <S.ModalTitle style={{ marginBottom: "6px" }}>Parabéns!</S.ModalTitle>
+          {difficulty === "easy" ? (
+            <S.P style={{ marginBottom: "18px" }}>
+              Chegou a hora de avançar para o nível médio e adquirir mais
+              conhecimentos!
+            </S.P>
+          ) : difficulty === "medium" ? (
+            <S.P style={{ marginBottom: "18px" }}>
+              Chegou a hora de avançar para o nível difícil e adquirir mais
+              conhecimentos!
+            </S.P>
+          ) : (
+            <S.P style={{ marginBottom: "18px" }}>
+              Você concluiu o Jogo da Memória DiversaMente e agora sabe um
+              pouquinho mais sobre a diversidade de gênero. Jogue novamente para
+              descobrir novos gêneros ou visualize todos acessando o glossário.
+            </S.P>
+          )}
           <div
             style={{
               display: "flex",
@@ -299,9 +317,15 @@ const Game = () => {
               width: "100%",
             }}
           >
-            <ModalButton onClick={() => history.push("/home")}>
-              Voltar
-            </ModalButton>
+            {difficulty === "hard" ? (
+              <ModalButton onClick={() => history.push("/home")}>
+                Sair
+              </ModalButton>
+            ) : (
+              <ModalButton onClick={() => history.push("/level")}>
+                Próximo nível
+              </ModalButton>
+            )}
           </div>
         </Modal>
       )}
