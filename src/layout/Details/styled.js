@@ -38,25 +38,25 @@ export const Content = styled.div`
 export const Title = styled.p`
   margin: 0;
   font-size: 1.3rem;
-  color: #F2F2F2;
+  color: #f2f2f2;
 `;
 
 export const Flag = styled.img`
   border-radius: 8px;
   margin-bottom: 16px;
-  align-self: center;
-  
+
   @media (min-width: 900px) {
     width: 400px;
+    align-self: center;
   }
 `;
 
 export const P = styled.p`
-  color: #F2F2F2; 
+  color: #f2f2f2;
   text-align: center;
   width: 90%;
   align-self: center;
-  
+
   @media (min-width: 900px) {
     width: 70%;
   }
