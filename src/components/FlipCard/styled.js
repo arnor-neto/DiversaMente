@@ -73,6 +73,7 @@ export const CardImg = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
+  backface-visibility: hidden;
 `;
 
 export const CardBack = styled(animated.div)`
