@@ -27,12 +27,18 @@ const Landing = () => {
         <S.Column>
           <S.Input
             placeholder="Usuário"
-            {...register("nickname", { required: true })}
+            {...register("nickname", { required: true, maxLength: 20})}
           />
-          {errors.nickname && (
+          {errors.nickname?.type === 'required' && (
             <div style={{display: 'flex', alignItems: 'center'}}>
               <img style={{width: '1rem', marginRight: '8px'}} src={InfoIcon} alt={"aviso"} />
               <span style={{color: '#ffffff', fontWeight: 300, fontSize: '0.9rem'}}>Campo não preenchido.</span>
+            </div>
+          )}
+          {errors.nickname?.type === 'maxLength' && (
+            <div style={{display: 'flex', alignItems: 'center'}}>
+              <img style={{width: '1rem', marginRight: '8px'}} src={InfoIcon} alt={"aviso"} />
+              <span style={{color: '#ffffff', fontWeight: 300, fontSize: '0.9rem'}}>Insira um nome com até 20 caracteres.</span>
             </div>
           )}
         </S.Column>
