@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(180deg, #c33764 0%, #1d2671 100%);
 `;
 
@@ -63,7 +63,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: ${props => props.difficulty === "hard" ? "80vh" : '84vh'};
+  min-height: ${props => props.difficulty === "hard" ? "80vh" : '84vh'};
 
   @media (min-width: 900px) {
     width: ${props => props.difficulty === 'hard' ? '96%' : '70%'};
