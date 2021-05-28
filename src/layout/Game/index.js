@@ -158,35 +158,37 @@ const Game = () => {
   };
 
   return (
-    <S.Wrapper>
-      <S.Header>
-        <ReturnButton action={handleReturn} />
-        <S.LevelInfo>
-          <S.Title>DiversaMente</S.Title>
-          <p style={{ margin: 0, color: "#f2f2f2" }}>
-            {difficulty === "easy"
-              ? "Fácil"
-              : difficulty === "medium"
-              ? "Médio"
-              : "Difícil"}
-          </p>
-        </S.LevelInfo>
-        <GameActions handleRestart={handleRestart} handleHelp={toggleHelp} />
-      </S.Header>
-      <S.Content difficulty={difficulty}>
-        {deck.map((item, index) => {
-          return (
-            <FlipCard
-              key={index}
-              name={item.name}
-              image={item.image}
-              locked={lock}
-              handleSelection={handleSelection}
-              difficulty={context.difficulty.get}
-            />
-          );
-        })}
-      </S.Content>
+    <>
+      <S.Wrapper>
+        <S.Header>
+          <ReturnButton action={handleReturn} />
+          <S.LevelInfo>
+            <S.Title>DiversaMente</S.Title>
+            <p style={{ margin: 0, color: "#f2f2f2" }}>
+              {difficulty === "easy"
+                ? "Fácil"
+                : difficulty === "medium"
+                ? "Médio"
+                : "Difícil"}
+            </p>
+          </S.LevelInfo>
+          <GameActions handleRestart={handleRestart} handleHelp={toggleHelp} />
+        </S.Header>
+        <S.Content difficulty={difficulty}>
+          {deck.map((item, index) => {
+            return (
+              <FlipCard
+                key={index}
+                name={item.name}
+                image={item.image}
+                locked={lock}
+                handleSelection={handleSelection}
+                difficulty={context.difficulty.get}
+              />
+            );
+          })}
+        </S.Content>
+      </S.Wrapper>
       {helpModal && (
         <Modal controller={helpModal}>
           <S.ModalHeader>
@@ -329,7 +331,7 @@ const Game = () => {
           </div>
         </Modal>
       )}
-    </S.Wrapper>
+    </>
   );
 };
 

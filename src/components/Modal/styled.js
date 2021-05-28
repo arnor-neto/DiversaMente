@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { animated } from "react-spring";
 
 export const ModalWrapper = styled(animated.div)`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
