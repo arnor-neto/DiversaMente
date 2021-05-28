@@ -5,28 +5,23 @@ export const Wrapper = styled.div`
   position: fixed;
   justify-content: ${(props) => (props.expanded ? "space-between" : "center")};
   align-items: center;
-  right: 6%;
-  width: ${(props) => (props.expanded ? "82%" : "36px")};
-  height: 36px;
+  right: 3%;
+  width: ${(props) => (props.expanded ? "94%" : "42px")};
+  height: 42px;
   border-radius: ${(props) => (props.expanded ? "24px" : "50%")};
   overflow: hidden;
-  background-color: ${(props) => (props.expanded ? "#ffffff" : "rgba(0, 0, 0, 0)")};
+  background-color: ${(props) => (props.expanded ? "#ffffff" : "#C33764")};
   z-index: 10;
-
-  @media (min-width: 900px) {
-    width: ${(props) => (props.expanded ? "88%" : "35px")};
-    height: 35px;
-  }
 `;
 
 export const Input = styled.input`
   border: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding-left: 1rem;
   text-align: left;
   background-color: white;
   outline: none;
-  display: ${(props) => (props.expanded ? "inline" : "none")};
+  opacity: ${(props) => (props.expanded ? 1 : 0)}; 
   width: 100% ;
 
   @media (min-width: 900px) {
@@ -35,7 +30,7 @@ export const Input = styled.input`
 `;
 
 export const Icon = styled.img`
-  width: ${(props) => (props.expanded ? "18px" : "24px")};;
-  margin-right: ${(props) => (props.expanded ? "18px" : 0)};
+  width: ${(props) => (props.expanded ? "20px" : "22px")};;
+  margin-right: ${(props) => (props.expanded ? "18px" : '20px')};
   cursor: pointer;
 `;
