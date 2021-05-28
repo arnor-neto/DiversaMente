@@ -9,5 +9,6 @@ export const Wrapper = styled.div`
 export const Text = styled.p`
   font-weight: 400;
   padding-top: 1px;
+  font-size: 1.1rem;
   color: #F2F2F2;
 `;

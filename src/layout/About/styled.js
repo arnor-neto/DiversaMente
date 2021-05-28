@@ -15,7 +15,7 @@ export const Header = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 13vh;
+  height: 15vh;
 
   @media (min-width: 900px){
     justify-content: space-between;
@@ -32,13 +32,13 @@ export const Content = styled.div`
   padding: 0 6% 6% 6%;
 
   @media (min-width: 900px){
-    width: 70%;
+    width: 60%;
   }
 `;
 
 export const Title = styled.p`
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #F2F2F2;
 `;
 
@@ -47,4 +47,8 @@ export const P = styled.p`
   margin-bottom: 1.3rem;
   text-align: center;
   color: #F2F2F2;
+
+  @media (min-width: 900px){
+    font-size: 1.1rem;
+  }
 `;

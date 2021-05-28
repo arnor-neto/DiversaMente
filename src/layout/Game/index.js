@@ -173,7 +173,7 @@ const Game = () => {
         </S.LevelInfo>
         <GameActions handleRestart={handleRestart} handleHelp={toggleHelp} />
       </S.Header>
-      <S.Content>
+      <S.Content difficulty={difficulty}>
         {deck.map((item, index) => {
           return (
             <FlipCard

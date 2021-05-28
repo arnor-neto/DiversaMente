@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   z-index: 10;
 
   @media (min-width: 900px) {
-    width: ${(props) => (props.expanded ? "25%" : "35px")};
+    width: ${(props) => (props.expanded ? "88%" : "35px")};
     height: 35px;
   }
 `;
@@ -35,7 +35,7 @@ export const Input = styled.input`
 `;
 
 export const Icon = styled.img`
-  width: ${(props) => (props.expanded ? "16px" : "20px")};;
+  width: ${(props) => (props.expanded ? "18px" : "24px")};;
   margin-right: ${(props) => (props.expanded ? "18px" : 0)};
   cursor: pointer;
 `;

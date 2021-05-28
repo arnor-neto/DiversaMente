@@ -15,7 +15,7 @@ export const Header = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 13vh;
+  height: 15vh;
 
   @media (min-width: 900px){
     justify-content: space-between;
@@ -37,7 +37,7 @@ export const Content = styled.div`
 
 export const Title = styled.p`
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   justify-self: center;
   color: #F2F2F2;
 `;

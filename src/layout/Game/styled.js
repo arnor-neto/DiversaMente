@@ -15,7 +15,7 @@ export const Header = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 12vh;
+  height: 13vh;
 
   @media (min-width: 900px) {
     justify-content: space-between;
@@ -32,11 +32,12 @@ export const LevelInfo = styled.div`
 `;
 export const Title = styled.p`
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   color: #f2f2f2;
 
   @media (min-width: 900px) {
     margin-top: 2%;
+    font-size: 1.5rem;
   }
 `;
 
@@ -62,10 +63,10 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: 86vh;
+  height: ${props => props.difficulty === "hard" ? "80vh" : '84vh'};
 
   @media (min-width: 900px) {
-    width: 70%;
+    width: ${props => props.difficulty === 'hard' ? '96%' : '70%'};
   }
 `;
 

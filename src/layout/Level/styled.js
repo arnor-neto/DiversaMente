@@ -15,7 +15,7 @@ export const Header = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 13vh;
+  height: 15vh;
 
   @media (min-width: 900px){
     justify-content: space-between;

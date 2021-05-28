@@ -9,13 +9,13 @@ export const CardContainer = styled(animated.div)`
       ? "30%"
       : props.difficulty === "medium"
       ? "22%"
-      : "16%"};
+      : "15%"};
   padding-bottom: ${(props) =>
     props.difficulty === "easy"
       ? "30%"
       : props.difficulty === "medium"
       ? "22%"
-      : "16%"};
+      : "15%"};
   cursor: pointer;
   perspective: 1000px;
   -webkit-perspective: 1000px;
@@ -25,26 +25,26 @@ export const CardContainer = styled(animated.div)`
       props.difficulty === "easy"
         ? "18%"
         : props.difficulty === "medium"
-        ? "13%"
-        : "10%"};
+        ? "14%"
+        : "8%"};
     padding-bottom: ${(props) =>
       props.difficulty === "easy"
         ? "18%"
         : props.difficulty === "medium"
-        ? "13%"
-        : "10%"};
+        ? "14%"
+        : "8%"};
     margin-left: ${(props) =>
       props.difficulty === "easy"
         ? "3%"
         : props.difficulty === "medium"
         ? "1%"
-        : "1%"};
+        : "0"};
     margin-right: ${(props) =>
       props.difficulty === "easy"
         ? "3%"
         : props.difficulty === "medium"
         ? "1%"
-        : "1%"};
+        : "0"};
   }
 `;
 

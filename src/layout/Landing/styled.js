@@ -52,10 +52,10 @@ export const Input = styled.input`
 `;
 
 export const Logo = styled.img`
-  width: 36%;
+  width: 64%;
   margin-bottom: 32px;
 
   @media (min-width: 900px) {
-    width: 10%;
+    width: 24%;
   }
 `;
