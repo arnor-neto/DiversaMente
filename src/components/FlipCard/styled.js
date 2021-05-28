@@ -21,18 +21,18 @@ export const CardContainer = styled(animated.div)`
   perspective: 1000px;
   -webkit-perspective: 1000px;
 
-  @media (min-width: 900px) {
+  @media (min-width: 800px) {
     width: ${(props) =>
       props.difficulty === "easy"
         ? "18%"
         : props.difficulty === "medium"
-        ? "14%"
+        ? "13%"
         : "8%"};
     padding-bottom: ${(props) =>
       props.difficulty === "easy"
         ? "18%"
         : props.difficulty === "medium"
-        ? "14%"
+        ? "13%"
         : "8%"};
     margin-left: ${(props) =>
       props.difficulty === "easy"
