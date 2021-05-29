@@ -16,13 +16,14 @@ export const Wrapper = styled.div`
 
 export const Input = styled.input`
   border: none;
-  font-size: 1rem;
-  padding-left: 1rem;
+  padding: 0;
+  padding-left: ${(props) => (props.expanded ? "1rem" : 0)};
   text-align: left;
   background-color: white;
   outline: none;
-  opacity: ${(props) => (props.expanded ? 1 : 0)}; 
-  width: 100% ;
+  opacity: ${(props) => (props.expanded ? 1 : 0)};
+  width: ${(props) => (props.expanded ? "100%" : 0)};
+  height: ${(props) => (props.expanded ? "auto" : 0)};
 
   @media (min-width: 900px) {
     font-size: 1rem;
@@ -30,7 +31,7 @@ export const Input = styled.input`
 `;
 
 export const Icon = styled.img`
-  width: ${(props) => (props.expanded ? "20px" : "22px")};;
-  margin-right: ${(props) => (props.expanded ? "18px" : '20px')};
+  width: ${(props) => (props.expanded ? "20px" : "22px")};
+  margin-right: ${(props) => (props.expanded ? "18px" : 0)};
   cursor: pointer;
 `;
