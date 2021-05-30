@@ -2,7 +2,7 @@
 
 Este projeto foi desenvolvido durante a 2ª fase de imersão do Ioasys Camp com uma equipe de integrantes das áreas de gerência de projetos, design, desenvolvimento Front-end, Back-end, Android e IOS.
 
-<img src="https://user-images.githubusercontent.com/42072854/120115030-45f68a00-c158-11eb-830f-e8e0dbe2637b.png" width="auto" height="320" />
+<img src="https://user-images.githubusercontent.com/42072854/120115030-45f68a00-c158-11eb-830f-e8e0dbe2637b.png" width="auto" height="470" />
 
 # 🏳‍🌈 Sobre o app
 
