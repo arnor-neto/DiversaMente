@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Ioasys Camp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto foi desenvolvido durante a 2ª fase de imersão do Ioasys Camp com uma equipe de integrantes das áreas de gerência de projetos, design, desenvolvimento Front-end, Back-end, Android e IOS.
 
-## Available Scripts
+<img src="https://user-images.githubusercontent.com/42072854/120115030-45f68a00-c158-11eb-830f-e8e0dbe2637b.png" width="auto" height="320" />
 
-In the project directory, you can run:
+# 🏳‍🌈 Sobre o app
+
+Diversamente é uma aplicação voltada para disseminação do conhecimento sobre a diversidade de gênero através de uma solução informativa e educativa.
+
+## Recursos do Projeto
+- Protótipo Visual: https://www.figma.com/file/YFXYMBIipQvsoQqXIceVBK/DiversaMente
+- Documentação da API usada: https://app.swaggerhub.com/apis-docs/diversamente/Cards/1.0.0
+
+# ⚙ Como visualizar
+
+Para executar a aplicação no modo de desenvolvimento é necessário clonar o repositório e dentro da pasta do projeto executar:
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Adicionalmente, uma versão deste repositório está hospedada no Heroku. Para visualizar, acesse o endereço:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### [`diversamente.herokuapp.com`](https://diversamente.herokuapp.com/)
 
-### `yarn test`
+# ✨ Considerações pessoais
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Sou muito agradecido por toda a dedicação e atenção da equipe do Camp, concluir esta etapa foi difícil e cansativo mas é extremamente satisfatório ver o resultado de tanto esforço. Novamente agradeço por me darem a chance de fazer algo que me deixou orgulhoso com minha capacidade, galerinha da Ioasys. 💖
