@@ -46,11 +46,23 @@ export const P = styled.p`
   margin-bottom: 8px;
   color: #0d0c0c;
 
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 8; /* number of lines to show */
   -webkit-box-orient: vertical;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 30px;
+    
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 4px;
+    background: #888888;
+    border-radius: 30px;
+  }
 
   @media (min-width: 900px) {
     width: 80%;
