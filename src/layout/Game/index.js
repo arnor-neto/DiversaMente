@@ -235,7 +235,7 @@ const Game = () => {
             />
           </S.ModalHeader>
           <S.Flag src={displayCard.image} />
-          <S.P>{displayCard.description}</S.P>
+          <S.CardP>{displayCard.description}</S.CardP>
         </Modal>
       )}
       {returnModal && (

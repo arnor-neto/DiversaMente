@@ -46,11 +46,22 @@ export const P = styled.p`
   margin-bottom: 8px;
   color: #0d0c0c;
 
+  @media (min-width: 900px) {
+    width: 80%;
+  }
+`;
+
+export const CardP = styled.p`
+  margin: 0;
+  margin-bottom: 8px;
+  color: #0d0c0c;
+
   overflow-y: scroll;
   overflow-x: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 8; /* number of lines to show */
   -webkit-box-orient: vertical;
+  scrollbar-color: #888888 rgba(0, 0, 0, 0);
 
   &::-webkit-scrollbar {
     width: 4px;
