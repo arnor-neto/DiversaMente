@@ -2,6 +2,11 @@ import * as S from "./styled";
 import LogoutIcon from "../../assets/LogoutIcon.png";
 import { useHistory } from "react-router";
 
+/**
+ * Handles app logout. Directs user to landing page.
+ * Component used on Home page.
+ */
+
 const ReturnButton = () => {
   let history = useHistory();
 

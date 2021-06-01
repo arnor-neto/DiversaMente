@@ -7,6 +7,11 @@ import { useHistory } from "react-router-dom";
 import LogoFull from "../../assets/LogoFull.png";
 import InfoIcon from "../../assets/InfoIcon.png";
 
+/**
+ * Landing page. 
+ * Allows user to insert name and acess application.
+ */
+
 const Landing = () => {
   let history = useHistory();
   const context = useContext(Context);

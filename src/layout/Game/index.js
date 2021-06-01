@@ -10,6 +10,12 @@ import { Context } from "../../GlobalContext";
 import CloseIcon from "../../assets/CloseIcon.png";
 import axios from "axios";
 
+/**
+ * Game page. 
+ * Contains game logic and actions.
+ * Component disposition may change based on selected difficulty.
+ */
+
 const Game = () => {
   let history = useHistory();
   const context = useContext(Context);
@@ -41,6 +47,7 @@ const Game = () => {
   //game end controllers
   const [endModal, setEndModal] = useState(false);
 
+  //shuffles given array
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));

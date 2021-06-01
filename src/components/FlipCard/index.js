@@ -3,6 +3,12 @@ import { useSpring } from "react-spring";
 import { useState } from "react";
 import LogoMin from "../../assets/LogoMin.png";
 
+/**
+ * Memory game card. Renders card with given image.
+ * Can be flipped and triggers events.
+ * Component used on the Game page. 
+ */
+
 const FlipCard = ({ name, image, locked, handleSelection, difficulty }) => {
   const [flipped, setFlipped] = useState(true);
   const [faded, setFaded] = useState(false);

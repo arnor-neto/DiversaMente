@@ -1,6 +1,10 @@
 import * as S from "./styled";
 import ReturnButton from "../../components/ReturnButton";
 
+/**
+ * About page. Contains general info about the app and idea.
+ */
+
 const About = () => {
   return (
     <S.Wrapper>

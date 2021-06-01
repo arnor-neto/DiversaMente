@@ -4,6 +4,11 @@ import SearchIcon from "../../assets/SearchIcon.png";
 import CloseIcon from "../../assets/CloseIcon.png";
 import DarkSearchIcon from "../../assets/DarkSearchIcon.png";
 
+/**
+ * Search bar used for querying a given value. Recieves searched state from father.
+ * Component used on Gallery page.
+ */
+
 const SearchBar = ({ value, setValue }) => {
   const inputRef = useRef();
   const [expanded, setExpanded] = useState(false);

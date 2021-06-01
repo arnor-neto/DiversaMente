@@ -2,6 +2,11 @@ import * as S from "./styled";
 import RestartIcon from "../../assets/RestartIcon.png";
 import QuestionIcon from "../../assets/QuestionIcon.png";
 
+/**
+ * Contains the restart and help options that appear ingame.
+ * Component used on the Game page.
+ */
+
 const GameActions = ({handleRestart, handleHelp}) => {
 
   return (

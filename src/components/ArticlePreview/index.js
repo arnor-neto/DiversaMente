@@ -1,5 +1,10 @@
 import * as S from "./styled";
 
+/**
+ * Displays the given article information.
+ * Component used on the News page.
+ */
+
 const ArticlePreview = ({ articleURL, imgURL, title, content }) => {
   const openURL = () => {
     window.open(articleURL, "_blank");

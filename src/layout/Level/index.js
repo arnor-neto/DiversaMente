@@ -5,6 +5,13 @@ import { useHistory } from "react-router";
 import { useContext } from "react";
 import { Context } from "../../GlobalContext";
 
+/**
+ * Landing page. 
+ * Allows user to select the desired game difficulty.
+ * Harder difficulties are initially blocked and once 
+ * unlocked permission is stored on localStorage.
+ */
+
 const Level = () => {
   let history = useHistory();
   const context = useContext(Context);

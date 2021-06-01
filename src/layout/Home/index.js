@@ -6,6 +6,11 @@ import { Context } from "../../GlobalContext";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
+/**
+ * Home page. 
+ * Gives access to most of the apps functions.
+ */
+
 const Home = () => {
   let history = useHistory();
   const context = useContext(Context);

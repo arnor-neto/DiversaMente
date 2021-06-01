@@ -6,6 +6,11 @@ import { useHistory } from "react-router";
 import { Context } from "../../GlobalContext";
 import SearchBar from "../../components/SearchBar";
 
+/**
+ * Details page. 
+ * Displays all genders found on the diversamente backend.
+ */
+
 const Gallery = () => {
   let history = useHistory();
   const context = useContext(Context);
@@ -19,6 +24,7 @@ const Gallery = () => {
     history.push("/details");
   };
 
+  //gets all cards from diversamente backend
   useEffect(() => {
     axios
       .get("https://diversamente-api.herokuapp.com/api/cards/list")
@@ -30,6 +36,7 @@ const Gallery = () => {
       });
   }, []);
 
+  //listens for searchbar term change
   useEffect(() => {
     let filteredCards = cards.filter((card) => {
       return card.name.toLowerCase().includes(searchTerm.toLowerCase());

@@ -2,6 +2,11 @@ import * as S from "./styled";
 import BackIcon from "../../assets/LeftArrow.png";
 import { useHistory } from "react-router";
 
+/**
+ * Default app return button. 
+ * Returns to previous page using router history.
+ */
+
 const ReturnButton = ({action = 'return'}) => {
   let history = useHistory();
 

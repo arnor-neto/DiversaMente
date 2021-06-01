@@ -4,9 +4,15 @@ import ArticlePreview from "../../components/ArticlePreview";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+/**
+ * News page. 
+ * Displays the most recent diversity news obtained from the Gnews API.
+ */
+
 const News = () => {
   const [articles, setArticles] = useState([]);
 
+  //gets articles from GNews API
   useEffect(() => {
     axios
       .get(
